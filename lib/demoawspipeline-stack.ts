@@ -17,13 +17,13 @@ export class DemoawspipelineStack extends cdk.Stack {
     });
 
     const testingStage = democicdpipeline.addStage(new PipelineAppStage(this, 'test', {
-      env: { account: "102132116425", region: "eu-west-2" }
+      env: { account: "102132116425", region: "us-west-2" }
     }));
 
     testingStage.addPost(new ManualApprovalStep('approval'));
 
     const prodStage = democicdpipeline.addStage(new PipelineAppStage(this, 'prod', {
-      env: { account: "102132116425", region: "eu-west-2" }
+      env: { account: "102132116425", region: "us-west-2" }
     }));
   }
 }
